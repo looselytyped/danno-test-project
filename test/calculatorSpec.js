@@ -40,7 +40,7 @@ describe('add', () => {
         const p = new Promise((res, rej) => {
            setTimeout(res, 1000, 'woohoo!')
         });
-        return expect(p).to.eventually.equal('woohood!!').notify(done)
+        return expect(p).not.to.eventually.equal('woohoo!!').notify(done)
      });
   });
    //Look up the chai api

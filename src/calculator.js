@@ -6,4 +6,4 @@ export function foo(obj) {
    return obj.blah()
 }
 
-exportdefault add;
+export default add;
