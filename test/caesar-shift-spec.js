@@ -1,5 +1,6 @@
-import { expect, assert } from 'chai';
-import { encrypt, decrypt } from '../src/caesarShift';
+import { expect,} from 'chai';
+import { encrypt,
+         decrypt, } from '../src/caesar-shift';
 
 describe('A caesar shift', () => {
    describe('A shift of an empty string', () => {
@@ -92,42 +93,18 @@ describe('A caesar shift', () => {
    });
    describe("Some bad input for encrypt", () => {
       it('should not accept a null', () => {
-         try {
-            encrypt(null);
-            assert(false); //fail
-         } catch (e) {
-            expect(e).to.be.an('error')
-            expect(e.message).to.be.eq('The string provided is null');
-         }
+         expect(() => {encrypt(null)}).to.throw(Error, 'The string provided is null');
       });
       it('should not accept an undefined', () => {
-         try {
-            encrypt(undefined);
-            assert(false); //fail
-         } catch (e) {
-            expect(e).to.be.an('error')
-            expect(e.message).to.be.eq('The string provided is null');
-         }
+         expect(() => {encrypt(undefined)}).to.throw(Error, 'The string provided is null');
       });
    });
    describe("Some bad input for decrypt", () => {
-      it('should not accept a null', () => {
-         try {
-            decrypt(null);
-            assert(false); //fail
-         } catch (e) {
-            expect(e).to.be.an('error')
-            expect(e.message).to.be.eq('The string provided is null');
-         }
+      it('should not accept an null', () => {
+         expect(() => {encrypt(undefined)}).to.throw(Error, 'The string provided is null');
       });
-      it('should not accept an undefined', () => {
-         try {
-            decrypt(undefined);
-            assert(false); //fail
-         } catch (e) {
-            expect(e).to.be.an('error')
-            expect(e.message).to.be.eq('The string provided is null');
-         }
+      it('should not accept an null', () => {
+         expect(() => {encrypt(null)}).to.throw(Error, 'The string provided is null');
       });
    });
 });
