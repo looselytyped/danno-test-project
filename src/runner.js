@@ -6,10 +6,8 @@ import {parseLine, Checkout} from './book-parser.js';
 import {createInterface} from 'readline';
 import {createReadStream} from 'fs';
 
-const r1 = createInterface({
-    input: createReadStream('home/danno/Development/danno-test-project/resources/library.txt')
-});
+var appRoot = process.cwd();
 
-r1.on('line', (line) => {
-   console.log(`Line from file: ${line}`);
+export const r1 = createInterface({
+  input: createReadStream(appRoot + '/resources/library.txt')
 });
