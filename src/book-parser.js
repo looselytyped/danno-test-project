@@ -16,7 +16,7 @@ class Checkout {
 
 const parseLine = (str) => {
    const tokens = str.split('~');
-   if (tokens.length != 3) throw new Error('Invalid number of tokens');
+   if (tokens.length !== 3) throw new Error('Invalid number of tokens');
    return new Checkout(tokens[0], tokens[1], moment(tokens[2]));
 }
 
