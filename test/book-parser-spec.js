@@ -5,10 +5,9 @@ import {parseLine, Checkout} from '../src/book-parser.js';
 describe('A parse of a simple file', () => {
    it('should parse a line with "~" separators', () => {
       const result = parseLine('Beth Brown~The Leftovers~2013-03-31')
-      //expect(result).to.be.a('Checkout');
       expect(result.name).to.be.eql('Beth Brown');
       expect(result.title).to.be.eql('The Leftovers');
-      assert(result.date.isSame(moment('2013-03-31')));
+      expect(result.date.isSame(moment('2013-03-31'))).to.be.true;
    });
    it('should parse another line with different content', () => {
       const result = parseLine('Daniel Hinojosa~Functional Programming~2015-05-11')
