@@ -19,5 +19,7 @@ const r1 = createInterface({
 
 Rx.Observable.fromEvent(r1, 'line')
    .map(ln => parseLine(ln))
-   .map(co => {name: co..penalty(moment(), 10))
-   .subscribe(x => console.log(x));
+   .map(co => {return {name: co.name, penalty:co.penalty(moment(), 10)};})
+   .subscribe(x => console.log(x)); 
+//    .map(ln => parseLine(ln))
+//    .map(co => {name: co co.penalty(moment(), 10))
